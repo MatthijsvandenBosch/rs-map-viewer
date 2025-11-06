@@ -1,3 +1,5 @@
+import * as THREE from "three";
+(window as any).THREE = THREE;
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
