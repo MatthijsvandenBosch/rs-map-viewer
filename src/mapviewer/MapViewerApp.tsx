@@ -105,7 +105,10 @@ function MapViewerApp() {
         content = <div className="center-container max-height content-text">{errorMessage}</div>;
     } else if (downloadProgress) {
         const formattedCacheSize = formatBytes(downloadProgress.total);
-        const progress = ((downloadProgress.current / downloadProgress.total) * 100) | 0;
+   (window as any).renderer = (mapViewer as any).renderer;
+(window as any).scene = (mapViewer as any).scene;
+(window as any).camera = (mapViewer as any).camera;
+     const progress = ((downloadProgress.current / downloadProgress.total) * 100) | 0;
         content = (
             <div className="center-container max-height">
                 <OsrsLoadingBar
